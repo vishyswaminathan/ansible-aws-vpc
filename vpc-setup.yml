@@ -5,7 +5,7 @@
     - name: Import VPC variables
       include_vars: vars/vpc_setup
 
-      #### just nothing ####
+      #### just nothing 2 do ####
 
 
     - name: Create vprofile VPC
@@ -19,68 +19,20 @@
         state: "{{state}}"
       register: vpcout
 
+    - debug :
+        var: vpcout
 
 
     - name: Create pub  subnet 1  for zone 1
       ec2_vpc_subnet:
-        state: present
-        vpc_id: vpc-029cfa2f86e796fd4
-        cidr: "{{PubSub1Cidr}}"
-        availability_zone: "{{zone1}}"
-        tags:
-          Name: EC2 Subnet
-      register: ec2_subnet
+        state: "{{state}}"
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        cidr: "{{ PubSub1Cidr }}"
+        az: "{{zone1}}"
+        map_public : yes
+        resource_tags:
+          Name: vprofile-pubsub1
+      register: pubsub1_out
 
-
-    - name: Create pvt  subnet 1  for zone 1
-      ec2_vpc_subnet:
-        state: present
-        vpc_id: vpc-029cfa2f86e796fd4
-        cidr: "{{PrivSub1Cidr}}"
-        availability_zone: "{{zone1}}"
-        tags:
-          Name: EC2 Subnet
-      register: ec2_subnet
-
-    - name: Create pub  subnet 2  for zone 2
-      ec2_vpc_subnet:
-        state: present
-        vpc_id: vpc-029cfa2f86e796fd4
-        cidr: "{{PubSub2Cidr}}"
-        availability_zone: "{{zone2}}"
-        tags:
-          Name: EC2 Subnet
-      register: ec2_subnet
-
-
-    - name: Create pvt  subnet 2  for zone 2
-      ec2_vpc_subnet:
-        state: present
-        vpc_id: vpc-029cfa2f86e796fd4
-        cidr: "{{PrivSub2Cidr}}"
-        availability_zone: "{{zone2}}"
-        tags:
-          Name: EC2 Subnet
-      register: ec2_subnet
-
-    - name: Create pub  subnet 3  for zone 3
-      ec2_vpc_subnet:
-        state: present
-        vpc_id: vpc-029cfa2f86e796fd4
-        cidr: "{{PubSub3Cidr}}"
-        availability_zone: "{{zone3}}"
-        tags:
-          Name: EC2 Subnet
-      register: ec2_subnet
-
-
-    - name: Create pvt  subnet 3  for zone 3
-      ec2_vpc_subnet:
-        state: present
-        vpc_id: vpc-029cfa2f86e796fd4
-        cidr: "{{PrivSub3Cidr}}"
-        availability_zone: "{{zone3}}"
-        tags:
-          Name: EC2 Subnet
-      register: ec2_subnet
 
