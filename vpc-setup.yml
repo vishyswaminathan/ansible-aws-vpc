@@ -22,7 +22,7 @@
 
 
     - name: Create pub  subnet 1  for zone 1
-      amazon.aws.ec2_vpc_subnet:
+      ec2_vpc_subnet:
         state: present
         vpc_id: vpc-029cfa2f86e796fd4
         cidr: "{{PubSub1Cidr}}"
@@ -32,8 +32,8 @@
       register: ec2_subnet
 
 
-    - name: Create pvt subnet 1  for zone 1
-      amazon.aws.ec2_vpc_subnet:
+    - name: Create pvt  subnet 1  for zone 1
+      ec2_vpc_subnet:
         state: present
         vpc_id: vpc-029cfa2f86e796fd4
         cidr: "{{PrivSub1Cidr}}"
@@ -43,7 +43,7 @@
       register: ec2_subnet
 
     - name: Create pub  subnet 2  for zone 2
-      amazon.aws.ec2_vpc_subnet:
+      ec2_vpc_subnet:
         state: present
         vpc_id: vpc-029cfa2f86e796fd4
         cidr: "{{PubSub2Cidr}}"
@@ -53,8 +53,8 @@
       register: ec2_subnet
 
 
-    - name: Create pvt subnet 2  for zone 2
-      amazon.aws.ec2_vpc_subnet:
+    - name: Create pvt  subnet 2  for zone 2
+      ec2_vpc_subnet:
         state: present
         vpc_id: vpc-029cfa2f86e796fd4
         cidr: "{{PrivSub2Cidr}}"
@@ -63,11 +63,8 @@
           Name: EC2 Subnet
       register: ec2_subnet
 
-
-
-
     - name: Create pub  subnet 3  for zone 3
-      amazon.aws.ec2_vpc_subnet:
+      ec2_vpc_subnet:
         state: present
         vpc_id: vpc-029cfa2f86e796fd4
         cidr: "{{PubSub3Cidr}}"
@@ -77,8 +74,8 @@
       register: ec2_subnet
 
 
-    - name: Create pvt subnet 3  for zone 3
-      amazon.aws.ec2_vpc_subnet:
+    - name: Create pvt  subnet 3  for zone 3
+      ec2_vpc_subnet:
         state: present
         vpc_id: vpc-029cfa2f86e796fd4
         cidr: "{{PrivSub3Cidr}}"
@@ -86,3 +83,4 @@
         tags:
           Name: EC2 Subnet
       register: ec2_subnet
+
