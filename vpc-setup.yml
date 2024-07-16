@@ -5,6 +5,8 @@
     - name: Import VPC variables
       include_vars: vars/vpc_setup
 
+      #### just nothing ####
+
 
     - name: Create vprofile VPC
       ec2_vpc_net:
