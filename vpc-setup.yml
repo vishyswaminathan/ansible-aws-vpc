@@ -18,3 +18,71 @@
         tenancy: default
         state: "{{state}}"
       register: vpcout
+
+
+
+    - name: Create pub  subnet 1  for zone 1
+      amazon.aws.ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-029cfa2f86e796fd4
+        cidr: "{{PubSub1Cidr}}"
+        availability_zone: "{{zone1}}"
+        tags:
+          Name: EC2 Subnet
+      register: ec2_subnet
+
+
+    - name: Create pvt subnet 1  for zone 1
+      amazon.aws.ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-029cfa2f86e796fd4
+        cidr: "{{PrivSub1Cidr}}"
+        availability_zone: "{{zone1}}"
+        tags:
+          Name: EC2 Subnet
+      register: ec2_subnet
+
+    - name: Create pub  subnet 2  for zone 2
+      amazon.aws.ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-029cfa2f86e796fd4
+        cidr: "{{PubSub2Cidr}}"
+        availability_zone: "{{zone2}}"
+        tags:
+          Name: EC2 Subnet
+      register: ec2_subnet
+
+
+    - name: Create pvt subnet 2  for zone 2
+      amazon.aws.ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-029cfa2f86e796fd4
+        cidr: "{{PrivSub2Cidr}}"
+        availability_zone: "{{zone2}}"
+        tags:
+          Name: EC2 Subnet
+      register: ec2_subnet
+
+
+
+
+    - name: Create pub  subnet 3  for zone 3
+      amazon.aws.ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-029cfa2f86e796fd4
+        cidr: "{{PubSub3Cidr}}"
+        availability_zone: "{{zone3}}"
+        tags:
+          Name: EC2 Subnet
+      register: ec2_subnet
+
+
+    - name: Create pvt subnet 3  for zone 3
+      amazon.aws.ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-029cfa2f86e796fd4
+        cidr: "{{PrivSub3Cidr}}"
+        availability_zone: "{{zone3}}"
+        tags:
+          Name: EC2 Subnet
+      register: ec2_subnet
