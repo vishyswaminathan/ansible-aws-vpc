@@ -146,7 +146,7 @@
 
 
     - debug:
-        var: ""{{item}}""
+        var: "{{item}}"
       loop:
         - pubsub1_out.subnet.id
         - pubsub2_out.subnet.id
