@@ -108,4 +108,21 @@
           Name: vprofile-IGW
       register: igw_out
 
+    - name : setup RT for pub subnet
+      ec2_vpc_route_table:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        tags:
+          Name: Vprofile-PubRT
+        subnets:
+          - "{{pubsub1_out.subnet.id}}"
+          - "{{pubsub2_out.subnet.id}}"
+          - "{{pubsub3_out.subnet.id}}"
+        routes:
+          - dest: 0.0.0.0/0
+            gateway_id: "{{igw_out.gateway.id}}"
+        register: pubRT_out
+
+
+
 
