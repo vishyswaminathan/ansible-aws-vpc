@@ -73,7 +73,7 @@
         map_public : yes
         resource_tags:
           Name: vprofile-PrivSub1Cidr1
-      register: PrivSub1Cidr_out
+      register: privsub1_out
 
     - name: Create pvt  subnet 2  for zone 2
       ec2_vpc_subnet:
@@ -85,7 +85,7 @@
         map_public : yes
         resource_tags:
           Name: vprofile-PrivSub1Cidr2
-      register: PrivSub2Cidr_out
+      register: privsub2_out
 
     - name: Create pvt  subnet 3  for zone 3
       ec2_vpc_subnet:
@@ -97,7 +97,7 @@
         map_public : yes
         resource_tags:
           Name: vprofile-PrivSub3Cidr3
-      register: PrivSub3Cidr_out
+      register: privsub3_out
 
 
     - name: Internet Gateway setup
