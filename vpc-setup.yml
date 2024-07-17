@@ -109,7 +109,7 @@
           Name: vprofile-IGW
       register: igw_out
 
-    - name : setup RT for pub subnet
+    - name: setup RT for pub subnet
       ec2_vpc_route_table:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{ region }}"
@@ -125,7 +125,7 @@
       register: pubRT_out
 
 
-    - name : setup RT for pvt subnet
+    - name: setup RT for pvt subnet
       ec2_vpc_route_table:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{ region }}"
