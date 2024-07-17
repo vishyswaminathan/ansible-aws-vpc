@@ -5,7 +5,7 @@
     - name: Import VPC variables
       include_vars: vars/vpc_setup
 
-      #### just nothing 2 do ####
+      #### just a random code update ####
 
 
     - name: Create vprofile VPC
@@ -99,10 +99,7 @@
       register: PrivSub3Cidr_out
 
 
-
-
-
-    - name : Internet Gateway setup
+    - name: Internet Gateway setup
       ec2_vpc_iwg:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
