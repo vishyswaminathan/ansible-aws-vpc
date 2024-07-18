@@ -44,7 +44,7 @@
 
     - name: Creating Bastion Host
       amazon.aws.ec2_instance:
-        key_name: vprofile-key
+        key_name: vprofile_key
         region: "{{region}}"
         instance_type: t2.micro
         image_id: "{{bastion_ami}}"
