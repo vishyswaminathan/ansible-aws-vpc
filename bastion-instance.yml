@@ -40,7 +40,7 @@
 
 
     - debug:
-        var: "{{BastionSG_out}}"
+        var: BastionSG_out
 
     - name: Creating Bastion Host
       amazon.aws.ec2_instance:
