@@ -5,4 +5,24 @@
   gather_facts: no
   tasks:
     - name: Import VPC setup variable
-      include_vars: vars/vpc-output_vars
+      include_vars: vars/vpc-vpc-output_vars
+
+    - name: Import vprofile ec2 setup variable
+      include_vars: vars/vprostacksetup
+
+
+    - name: Create vprofile ec2 key
+      ec2_key:
+        name: vprokey
+        region: "{{region}}"
+      register: vprokey_out
+
+
+    - name: save private key into file loginkey_vpro.pem
+      copy:
+        content: "{{vprokey_out.key.private_key}}"
+        dest: "./loginkey_vpro.pem"
+        mode: 0600
+      when: vprokey_out.changed
+
+
