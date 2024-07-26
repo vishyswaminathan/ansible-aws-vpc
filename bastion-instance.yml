@@ -39,8 +39,8 @@
       register: BastionSG_out
 
 
-   ## - debug:
-     ##   var: BastionSG_out
+   ## - debug: ####
+     ##   var: BastionSG_out ###
     ### REMEMBER THAT YOU USED A DIFFERENT MODULE TO CREATE A BASTION VERSUS WHAT IS SHOWN IN THE PROJECT VIDEO ####
 
     - name: Creating Bastion Host
