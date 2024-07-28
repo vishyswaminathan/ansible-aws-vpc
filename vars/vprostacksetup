@@ -1,3 +1,4 @@
+region: ap-south-1
 nginx_ami: ami-00f994c719fc62e9e
 tomcat_ami: ami-00f994c719fc62e9e
 rmq_ami: ami-00f994c719fc62e9e

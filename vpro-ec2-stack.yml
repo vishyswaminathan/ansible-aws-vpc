@@ -10,12 +10,19 @@
     - name: Import vprofile ec2 setup variable
       include_vars: vars/vprostacksetup
 
+    - name: Import VPC setup variable
+      include_vars: vars/vpc_setup
+
 
     - name: Create vprofile ec2 key
       ec2_key:
         name: vprokey
         region: "{{region}}"
       register: vprokey_out
+
+    - name: debug vprokey details
+      debug:
+        var: vprokey_out
 
 
     - name: save private key into file loginkey_vpro.pem
@@ -26,3 +33,4 @@
       when: vprokey_out.changed
 
 #### random changes to update code ###
+

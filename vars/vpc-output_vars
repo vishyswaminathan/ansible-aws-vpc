@@ -1,4 +1,3 @@
-region: ap-south-1
 vpcid: vpc-029cfa2f86e796fd4
 pubsub1id: subnet-0d4e42c6e5a9b6155
 pubsub2id: subnet-02ceb761c8b98ab11
@@ -8,5 +7,5 @@ privsub2id: subnet-00e82774586c866e1
 privsub3id: subnet-0dff4f623b44f326c
 igwid: igw-0dcb280cc8e6201b5
 pubRTid: rtb-0c0f7d3534be54101
-NATGWid: nat-004fe1056bddd12d5
+NATGWid: nat-0e89c8a0e273de7e1
 privRTid: rtb-06808301e02086e0f
