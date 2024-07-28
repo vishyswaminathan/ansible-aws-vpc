@@ -65,7 +65,7 @@
             group_id: "{{vproELBSG_out.group_id}}"
 
 
-          - proto: 80
+          - proto: tcp
             from_port: 22
             to_port: 22
             group_id: "{{BastionSGid}}"
