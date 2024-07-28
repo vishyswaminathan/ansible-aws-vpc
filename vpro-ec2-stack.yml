@@ -72,3 +72,17 @@
       register: vproStackSG_out
 
 
+    - name: update SG with its own sg ID
+      ec2_group:
+        name: vproStack-sg
+        description: Allow port 22 from everywhere and all port within SG
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: "{{vproStackSG_out.group_id}}"
+
+
+
+
