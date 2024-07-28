@@ -42,7 +42,7 @@
         name: vproELB-sg
         description: Allow port 80 from everywhere and all port within sg
         region : "{{region}}"
-        vpc: "{{vpcid}}"
+        vpc_id: "{{vpcid}}"
         rules:
           - proto: tcp
             from_port: 80
