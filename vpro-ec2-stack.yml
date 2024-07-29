@@ -84,11 +84,11 @@
             group_id: "{{vproStackSG_out.group_id}}"
 
 
-    - name: creating nginx web01
+    - name: creating Nginx web01
       amazon.aws.ec2_instance:
         key_name: vprokey
         region: "{{region}}"
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_groups: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
         instance_type: t2.micro
         image_id: "{{nginx_ami}}"
@@ -105,11 +105,11 @@
 
 
 
-    - name: creating tomcat app01
+    - name: creating Tomcat app01
       amazon.aws.ec2_instance:
         key_name: vprokey
         region: "{{region}}"
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_groups: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
         instance_type: t2.micro
         image_id: "{{tomcat_ami}}"
@@ -131,7 +131,7 @@
       amazon.aws.ec2_instance:
         key_name: vprokey
         region: "{{region}}"
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_groups: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
         instance_type: t2.micro
         image_id: "{{rmq_ami}}"
@@ -151,7 +151,7 @@
       amazon.aws.ec2_instance:
         key_name: vprokey
         region: "{{region}}"
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_groups: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
         instance_type: t2.micro
         image_id: "{{mysql_ami}}"
