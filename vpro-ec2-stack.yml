@@ -84,5 +84,90 @@
             group_id: "{{vproStackSG_out.group_id}}"
 
 
+    - name: creating nginx web01
+      amazon.aws.ec2_instance:
+        key_name: vprokey
+        region: "{{region}}"
+        group_id: "{{vproStackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        image_id: "{{nginx_ami}}"
+        wait: yes
+        wait_timeout: 300
+        tags:
+          Name: "web01"
+          Project: Vprofile
+          Owner: DevOps Team
+        count: 1
+      register: web01_out
+
+
+
+
+
+    - name: creating tomcat app01
+      amazon.aws.ec2_instance:
+        key_name: vprokey
+        region: "{{region}}"
+        group_id: "{{vproStackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        image_id: "{{tomcat_ami}}"
+        wait: yes
+        wait_timeout: 300
+        tags:
+          Name: "app01"
+          Project: Vprofile
+          Owner: DevOps Team
+        count: 1
+      register: app01_out
+
+
+
+
+
+
+    - name: creating RabbitMQ rmq01
+      amazon.aws.ec2_instance:
+        key_name: vprokey
+        region: "{{region}}"
+        group_id: "{{vproStackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        image_id: "{{rmq_ami}}"
+        wait: yes
+        wait_timeout: 300
+        tags:
+          Name: "rmq01"
+          Project: Vprofile
+          Owner: DevOps Team
+        count: 1
+      register: rmq01_out
+
+
+
+
+    - name: creating Mysql db01
+      amazon.aws.ec2_instance:
+        key_name: vprokey
+        region: "{{region}}"
+        group_id: "{{vproStackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        image_id: "{{mysql_ami}}"
+        wait: yes
+        wait_timeout: 300
+        tags:
+          Name: "db01"
+          Project: Vprofile
+          Owner: DevOps Team
+        count: 1
+      register: db01_out
+
+
+    - debug:
+        var: db01_out
+
+
 
 
