@@ -70,7 +70,7 @@
         region: "{{region}}"
         cidr: "{{ PrivSub1Cidr }}"
         az: "{{zone1}}"
-        map_public : yes
+        map_public : no
         resource_tags:
           Name: vprofile-PrivSub1Cidr1
       register: privsub1_out
@@ -82,7 +82,7 @@
         region: "{{region}}"
         cidr: "{{ PrivSub2Cidr }}"
         az: "{{zone2}}"
-        map_public : yes
+        map_public : no
         resource_tags:
           Name: vprofile-PrivSub1Cidr2
       register: privsub2_out
@@ -94,7 +94,7 @@
         region: "{{region}}"
         cidr: "{{ PrivSub3Cidr }}"
         az: "{{zone3}}"
-        map_public : yes
+        map_public : no
         resource_tags:
           Name: vprofile-PrivSub3Cidr3
       register: privsub3_out
