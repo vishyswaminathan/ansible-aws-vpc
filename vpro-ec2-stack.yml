@@ -166,7 +166,7 @@
 
 
     - debug:
-        var: db01_out.tagged_instances[0].id
+        var: db01_out.instances[0].InstanceId
 
 
     - local_action:
@@ -175,7 +175,7 @@
         region: "{{region}}"
         state: present
         instance_ids:
-          - "{{ web01_out.tagged_instances[0].id }}"
+          - "{{ web01_out.instances[0].InstanceId }}"
         purge_instance_ids: true
         security_group_ids: "{{ vproELBSG_out.group_id }}"
         subnets:
