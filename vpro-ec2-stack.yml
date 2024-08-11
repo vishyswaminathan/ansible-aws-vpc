@@ -34,7 +34,7 @@
         mode: 0600
       when: vprokey_out.changed
 
-#### random changes to update code ###
+#### random changes to update code again ###
 
 
     - name: create SG for load balancer
@@ -230,7 +230,7 @@
 
           [dbsrvgrp]
           db01
-
+    
           [control]
           cntl
 
