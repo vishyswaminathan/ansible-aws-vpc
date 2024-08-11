@@ -1,5 +1,5 @@
 ---
-- name: Build Artifact ROOT.war & SQL file to be copies in files/ directory
+- name: Build Artifact ROOT.war & SQL file to be copied in files/ directory
   import_playbook: build.yml
 
 - name: Set Hosts to Ip Mappting in /etc/hosts file of all servers
