@@ -187,16 +187,16 @@
             load_balancer_port: 80
             instance_port: 80
 
-#### changes made to code####
+#### changes made to code again ####
 
     - name: Insert/Update Hosts IP & Name in file provision-stack/group_vars/hostsip
       blockinfile:
         path: provision-stack/group_vars/hostsip
         block: |
-          web01_ip: {{ web01_out.instance_ids.private_ip_address }}
-          app01_ip: {{ app01_out.instance_ids.private_ip_address }}
-          rmq01_ip: {{ rmq01_out.instance_ids.private_ip_address }}
-          db01_ip: {{ db01_out.instance_ids.private_ip_address }}
+          web01_ip: {{ web01_out.instances[0].private_ip_address }}
+          app01_ip: {{ app01_out.instances[0].private_ip_address }}
+          rmq01_ip: {{ rmq01_out.instances[0].private_ip_address }}
+          db01_ip: {{ db01_out.instances[0].private_ip_address }}
 
     - name: Copy login key to provision_stack directory
       copy:
@@ -208,10 +208,10 @@
       blockinfile:
         path: provision-stack/inventory-vpro
         block: |
-          web01_ip: {{ web01_out.instance_ids.private_ip_address }}
-          app01_ip: {{ app01_out.instance_ids.private_ip_address }}
-          rmq01_ip: {{ rmq01_out.instance_ids.private_ip_address }}
-          db01_ip: {{ db01_out.instance_ids.private_ip_address }}
+          web01_ip: {{ web01_out.instances[0].private_ip_address }}
+          app01_ip: {{ app01_out.instances[0].private_ip_address }}
+          rmq01_ip: {{ rmq01_out.instances[0].private_ip_address }}
+          db01_ip: {{ db01_out.instances[0].private_ip_address }}
           cntl ansible_host=127.0.0.1 ansible_connection=local
 
           [websrvgrp]
@@ -244,7 +244,7 @@
           ansible_ssh_private_key_file=loginkey_vpro.pem
           #ansible_python_interpreter=/usr/bin/python3
 
-#### testing changes ######
+#### testing changes be patient ######
 
 
 
