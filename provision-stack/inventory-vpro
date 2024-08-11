@@ -14,8 +14,6 @@ app01
 [rmqsrvgrp]
 rmq01
 
-[mcsrvgrp]
-mc01
 
 [dbsrvgrp]
 db01
@@ -27,7 +25,6 @@ cntl
 websrvgrp
 appsrvgrp
 rmqsrvgrp
-mcsrvgrp
 dbsrvgrp
 
 [stack_inst:vars]
