@@ -3,6 +3,12 @@
   hosts: dbsrvgrp
   gather_facts: no
   tasks:
+    - name: Update APT cache
+      apt:
+        update_cache: yes
+      when: ansible_distribution == 'Ubuntu'
+
+
     - name: Installing Mysql Service and dependencies
       package:
         name: "{{item}}"
