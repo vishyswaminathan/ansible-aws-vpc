@@ -1,0 +1,133 @@
+2024-08-11 15:43:59,209 p=970 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'  The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-vpro': line 8, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:   [websrvgrp] ^ here
+
+2024-08-11 15:43:59,210 p=970 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: Invalid host pattern 'web01_ip:' supplied, ending in ':' is not allowed, this
+character is reserved to provide a port.
+
+2024-08-11 15:43:59,210 p=970 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2024-08-11 15:43:59,210 p=970 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-08-11 15:43:59,218 p=970 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2024-08-11 15:43:59,515 p=970 u=ubuntu n=ansible | PLAY [generate artifact , copy artifact & sql file to files directory] ************************************************************************************************************************
+2024-08-11 15:43:59,534 p=970 u=ubuntu n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************************
+2024-08-11 15:44:00,762 p=970 u=ubuntu n=ansible | ok: [localhost]
+2024-08-11 15:44:00,778 p=970 u=ubuntu n=ansible | TASK [install jdk , maven, git] ***************************************************************************************************************************************************************
+2024-08-11 15:44:14,949 p=970 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2024-08-11 15:44:46,340 p=970 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2024-08-11 15:44:57,627 p=970 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2024-08-11 15:44:57,644 p=970 u=ubuntu n=ansible | TASK [clone source code from github] **********************************************************************************************************************************************************
+2024-08-11 15:45:06,188 p=970 u=ubuntu n=ansible | changed: [localhost]
+2024-08-11 15:45:06,198 p=970 u=ubuntu n=ansible | TASK [mvn install command to build artifact] **************************************************************************************************************************************************
+2024-08-11 15:45:44,858 p=970 u=ubuntu n=ansible | changed: [localhost]
+2024-08-11 15:45:44,891 p=970 u=ubuntu n=ansible | TASK [copy artifacts to files directory] ******************************************************************************************************************************************************
+2024-08-11 15:45:46,346 p=970 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2024-08-11 15:45:46,357 p=970 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] *******************************************************************************************************************************************************
+2024-08-11 15:45:46,806 p=970 u=ubuntu n=ansible | changed: [localhost]
+2024-08-11 15:45:46,822 p=970 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2024-08-11 15:45:46,822 p=970 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-08-11 16:37:58,351 p=5411 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'  The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-vpro': line 8, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:   [websrvgrp] ^ here
+
+2024-08-11 16:37:58,351 p=5411 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: Invalid host pattern 'web01_ip:' supplied, ending in ':' is not allowed, this
+character is reserved to provide a port.
+
+2024-08-11 16:37:58,351 p=5411 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2024-08-11 16:37:58,352 p=5411 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-08-11 16:37:58,359 p=5411 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2024-08-11 16:37:58,764 p=5411 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ************************************************************************************************************
+2024-08-11 16:37:58,764 p=5411 u=ubuntu n=ansible | skipping: no hosts matched
+2024-08-11 16:37:58,765 p=5411 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2024-08-11 16:41:33,435 p=5422 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'  The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-vpro': line 8, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:   [websrvgrp] ^ here
+
+2024-08-11 16:41:33,435 p=5422 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: Invalid host pattern 'web01_ip:' supplied, ending in ':' is not allowed, this
+character is reserved to provide a port.
+
+2024-08-11 16:41:33,436 p=5422 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2024-08-11 16:41:33,436 p=5422 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-08-11 16:41:33,440 p=5422 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2024-08-11 16:41:33,598 p=5422 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ************************************************************************************************************
+2024-08-11 16:41:33,599 p=5422 u=ubuntu n=ansible | skipping: no hosts matched
+2024-08-11 16:41:33,599 p=5422 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2024-08-11 16:52:06,299 p=5438 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'  The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-vpro': line 8, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:   [websrvgrp] ^ here
+
+2024-08-11 16:52:06,299 p=5438 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: Invalid host pattern 'web01_ip:' supplied, ending in ':' is not allowed, this
+character is reserved to provide a port.
+
+2024-08-11 16:52:06,299 p=5438 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2024-08-11 16:52:06,300 p=5438 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-08-11 16:52:06,303 p=5438 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2024-08-11 16:52:06,304 p=5438 u=ubuntu n=ansible |   hosts (0):
+2024-08-11 16:56:34,218 p=5457 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'  The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-vpro': line 8, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:   [websrvgrp] ^ here
+
+2024-08-11 16:56:34,219 p=5457 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: Invalid host pattern 'web01_ip:' supplied, ending in ':' is not allowed, this
+character is reserved to provide a port.
+
+2024-08-11 16:56:34,219 p=5457 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2024-08-11 16:56:34,219 p=5457 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-08-11 16:56:34,223 p=5457 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2024-08-11 16:56:34,378 p=5457 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ************************************************************************************************************
+2024-08-11 16:56:34,379 p=5457 u=ubuntu n=ansible | skipping: no hosts matched
+2024-08-11 16:56:34,379 p=5457 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2024-08-11 17:13:25,917 p=5495 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'  The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-vpro': line 8, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:   [websrvgrp] ^ here
+
+2024-08-11 17:13:25,918 p=5495 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: Invalid host pattern 'web01_ip:' supplied, ending in ':' is not allowed, this
+character is reserved to provide a port.
+
+2024-08-11 17:13:25,918 p=5495 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2024-08-11 17:13:25,918 p=5495 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-08-11 17:13:25,922 p=5495 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2024-08-11 17:13:26,078 p=5495 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ************************************************************************************************************
+2024-08-11 17:13:26,078 p=5495 u=ubuntu n=ansible | skipping: no hosts matched
+2024-08-11 17:13:26,078 p=5495 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2024-08-11 17:17:47,550 p=5519 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ************************************************************************************************************
+2024-08-11 17:17:47,572 p=5519 u=ubuntu n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************************
+2024-08-11 17:17:49,334 p=5519 u=ubuntu n=ansible | ok: [cntl]
+2024-08-11 17:17:49,396 p=5519 u=ubuntu n=ansible | ok: [web01]
+2024-08-11 17:17:50,367 p=5519 u=ubuntu n=ansible | ok: [rmq01]
+2024-08-11 17:17:50,373 p=5519 u=ubuntu n=ansible | ok: [app01]
+2024-08-11 17:17:50,494 p=5519 u=ubuntu n=ansible | ok: [db01]
+2024-08-11 17:17:50,510 p=5519 u=ubuntu n=ansible | TASK [Import VPC setup Variable] **************************************************************************************************************************************************************
+2024-08-11 17:17:50,559 p=5519 u=ubuntu n=ansible | ok: [cntl]
+2024-08-11 17:17:50,580 p=5519 u=ubuntu n=ansible | ok: [web01]
+2024-08-11 17:17:50,604 p=5519 u=ubuntu n=ansible | ok: [app01]
+2024-08-11 17:17:50,606 p=5519 u=ubuntu n=ansible | ok: [rmq01]
+2024-08-11 17:17:50,614 p=5519 u=ubuntu n=ansible | ok: [db01]
+2024-08-11 17:17:50,622 p=5519 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ****************************************************************************************************************************************************
+2024-08-11 17:17:51,445 p=5519 u=ubuntu n=ansible | changed: [web01]
+2024-08-11 17:17:51,447 p=5519 u=ubuntu n=ansible | changed: [rmq01]
+2024-08-11 17:17:51,447 p=5519 u=ubuntu n=ansible | changed: [app01]
+2024-08-11 17:17:51,451 p=5519 u=ubuntu n=ansible | changed: [db01]
+2024-08-11 17:17:51,464 p=5519 u=ubuntu n=ansible | changed: [cntl]
+2024-08-11 17:17:51,480 p=5519 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2024-08-11 17:17:51,480 p=5519 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-08-11 17:17:51,480 p=5519 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-08-11 17:17:51,480 p=5519 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-08-11 17:17:51,481 p=5519 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-08-11 17:17:51,481 p=5519 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
