@@ -32,9 +32,16 @@
       tags:
         - package
 
-    - apt_repository:
+    - name: Add RabbitMQ repository
+      apt_repository:
         repo: "deb https://packages.rabbitmq.com/debian {{ ansible_distribution_release }} main"
         state: present
+      tags:
+        - package
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
       tags:
         - package
 
