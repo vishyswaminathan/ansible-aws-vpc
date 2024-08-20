@@ -1,2 +1,7 @@
+##incoming changes ## 
 # BEGIN ANSIBLE MANAGED BLOCK
-
+web01_ip: 172.20.4.199
+app01_ip: 172.20.4.254
+rmq01_ip: 172.20.4.27
+db01_ip: 172.20.4.146
+# END ANSIBLE MANAGED BLOCK

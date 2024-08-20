@@ -1,7 +1,7 @@
 ---
 - name: Install & Setup RabbitMQ with user
   hosts: rmqsrvgrp
-  gather_facts: no
+  gather_facts: yes
   tasks:
     - name: Install Erlang Repository Package
       apt:
@@ -25,7 +25,7 @@
       tags:
         - package
 
-    - name: Add an Apt signing key, uses whichever key is at the URL
+    - name: Add the RabbitMQ Apt signing key
       apt_key:
         url: https://keys.openpgp.org/vks/v1/by-fingerprint/0A9AF2115F4687BD29803A206B73A36E6026DFCA
         state: present
@@ -39,13 +39,21 @@
       tags:
         - package
 
-    - name: Update apt cache
-      apt:
-        update_cache: yes
+    - name: Verify RabbitMQ repository added correctly
+      shell: "grep -r '^deb .*rabbitmq.com/debian' /etc/apt/sources.list /etc/apt/sources.list.d/"
+      register: rabbitmq_repo_check
+      failed_when: rabbitmq_repo_check.rc != 0
       tags:
         - package
 
-    - name: Install Rabbit MQ
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+      when: rabbitmq_repo_check.rc == 0
+      tags:
+        - package
+
+    - name: Install RabbitMQ server
       apt:
         name: rabbitmq-server
         state: present
@@ -53,8 +61,7 @@
       tags:
         - package
 
-
-    - name: Start & Enable RMQ
+    - name: Start & Enable RabbitMQ
       service:
         name: rabbitmq-server
         state: started
@@ -62,7 +69,7 @@
       tags:
         - svc
 
-    - name: Config setup
+    - name: Configure RabbitMQ
       copy:
         content: |
           [{rabbit, [{loopback_users, []}]}].
@@ -72,8 +79,8 @@
       tags:
         - conf
 
-
-    - rabbitmq_user:
+    - name: Create RabbitMQ user
+      rabbitmq_user:
         user: test
         password: test
         configure_priv: .*
@@ -86,8 +93,7 @@
       tags:
         - conf
 
-
-    - name: Enables the rabbitmq_management plugin
+    - name: Enable rabbitmq_management plugin
       rabbitmq_plugin:
         names: rabbitmq_management
         state: enabled
@@ -102,5 +108,3 @@
         name: rabbitmq-server
         state: restarted
 
-
-        ### random update ###

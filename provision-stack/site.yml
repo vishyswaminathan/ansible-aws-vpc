@@ -19,8 +19,8 @@
 ## random changes ###
 
 
-- name:  setup rabbitmq service
-  import_playbook: rabbitmq.yml
+#- name:  setup rabbitmq service
+#  import_playbook: rabbitmq.yml
 
 
 - name: setup tomcat application server
