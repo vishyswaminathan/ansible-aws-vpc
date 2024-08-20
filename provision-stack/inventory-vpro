@@ -1,4 +1,4 @@
-# BEGIN ANSIBLE MANAGED BLOCK
+# BEGIN ANSIBLE MANAGED BLOCK #
 
 [websrvgrp]
 web01 ansible_host=172.20.4.162
@@ -25,4 +25,4 @@ dbsrvgrp
 ansible_user=ubuntu
 ansible_ssh_private_key_file=loginkey_vpro.pem
 #ansible_python_interpreter=/usr/bin/python3
-# END ANSIBLE MANAGED BLOCK
+# END ANSIBLE MANAGED BLOCK #
