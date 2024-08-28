@@ -1,6 +1,11 @@
 CONFIGURATION MANAGEMENT USING ANSIBLE
 ======================================
 
+ARCHITECTURE DIAGRAM: 
+
+![AWS_LIGHT](https://github.com/user-attachments/assets/4b189567-54a4-4ae5-88a9-a55b25993353)
+
+
 Deploying a complete application stack using Ansible configuration management.
 
 Description : 
